@@ -17,7 +17,7 @@ public class BennyDriveSubsystem extends SubsystemBase {
 WPI_TalonSRX BenjaminBoyackLF = new WPI_TalonSRX(1);
 WPI_TalonSRX BenjaminBoyackLB = new WPI_TalonSRX(2);
 WPI_TalonSRX BenjaminBoyackRF = new WPI_TalonSRX(3);
-WPI_TalonSRX BenjaminBoyackRB = new WPI_TalonSRX(4);
+WPI_TalonSRX BenjaminBoyackRB = new WPI_TalonSRX(0);
 
 SpeedControllerGroup BennyLeft = new SpeedControllerGroup(BenjaminBoyackLB, BenjaminBoyackLF);
 SpeedControllerGroup BennyRight = new SpeedControllerGroup(BenjaminBoyackRB, BenjaminBoyackRF);
