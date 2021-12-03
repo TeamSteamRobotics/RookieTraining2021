@@ -4,16 +4,18 @@
 
 package frc.robot.commands;
 
+import java.util.function.DoubleSupplier;
+
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.subsystems.DriveSubsystem;
 
 public class DriveCommand extends CommandBase {
   //driveSubsystem1 isn't equal to new driveSubsystem because we're using as an empty box. speed1 and turn1 are filling the box.
   DriveSubsystem driveSubsystem1;
-  Double speed1;
-  Double turn1;
+  DoubleSupplier speed1;
+  DoubleSupplier turn1;
   /** Creates a new DriveCommand. */
-  public DriveCommand(DriveSubsystem driveSubsystem2, Double speed2, Double turn2) {
+  public DriveCommand(DriveSubsystem driveSubsystem2, DoubleSupplier speed2, DoubleSupplier turn2) {
     //Both driveSubsystems, speeds, and turns have to be equal so they can be used in the code later.
     driveSubsystem1 = driveSubsystem2;
     speed1 = speed2;
@@ -30,7 +32,7 @@ public class DriveCommand extends CommandBase {
   @Override
   public void execute() {
     //driveSubsystem1 is based on the speed and turn amount.
-    driveSubsystem1.drive(speed1, turn1, true);
+    driveSubsystem1.drive(speed1.getAsDouble(), turn1.getAsDouble(),true);
   }
 
   // Called once the command ends or is interrupted.

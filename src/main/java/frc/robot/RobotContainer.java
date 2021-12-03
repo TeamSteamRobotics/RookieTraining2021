@@ -26,8 +26,8 @@ public class RobotContainer {
   private final ExampleCommand m_autoCommand = new ExampleCommand(m_exampleSubsystem);
   //private means other files can't access it, but final means other codes can't change it.
   private final DriveSubsystem driveSubsytem10 = new DriveSubsystem();
-  private final Joystick arcade = new Joystick(12);
-  private final DriveCommand command10 = new DriveCommand(driveSubsytem10, arcade.getX(), arcade.getY());
+  private final Joystick arcade = new Joystick(1);
+  private final DriveCommand command10 = new DriveCommand(driveSubsytem10, () -> arcade.getX(), () -> arcade.getY());
 
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
   public RobotContainer() {
